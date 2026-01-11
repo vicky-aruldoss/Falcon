@@ -80,6 +80,8 @@ class Main {
         int count = 1;
         StringBuilder str1 = new StringBuilder();
         char prev = str.charAt(0);
+
+       // Adding the first element in the result string
         str1.append(prev);
         
         // Edge Case --> if(str.length()==0) return -1;
@@ -95,6 +97,8 @@ class Main {
                 }
             prev = curr;
         }
+
+        // Adding the last element's count in the return string
         str1.append(count);
         System.out.println(str1);
     }
