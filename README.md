@@ -105,3 +105,34 @@ class Main {
 }
 
 ```
+
+Problem Statement: Sunset View (West Side)
+
+You are given an array of integers where each integer represents the height of a 
+building arranged in a straight line from west to east.
+The sunset is in the west, which corresponds to the left side of the array.
+A building can see the sunset if all the buildings to its west (left side) are shorter than it.
+Your task is to determine how many buildings can see the sunset.
+
+Input:
+arr = {3, 4, 4, 5, 2, 3}
+Output:
+3
+
+```
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {3,4,4,5,2,3};
+        int max = Integer.MIN_VALUE;
+        int count = 0;
+        
+        for(int i=0;i<arr.length;i++) {
+            if(arr[i]>max) {
+                max = arr[i];
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+```
