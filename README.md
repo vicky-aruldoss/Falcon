@@ -149,7 +149,6 @@ c
 Concepts tested
 
 HashMap
-
 String traversal
 
 Program 
