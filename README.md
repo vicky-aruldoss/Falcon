@@ -136,3 +136,42 @@ class Main {
     }
 }
 ```
+
+Problem Statement: First Non-Repeating Character in a String
+Given a string, find the first non-repeating character.
+
+Input
+s = "aabbcdde"
+
+Output
+c
+
+Concepts tested
+HashMap
+String traversal
+
+Program 
+
+```
+
+import java.util.HashMap;
+class Main {
+    public static void main(String [] args) {
+        String str ="aabbcddee";
+        HashMap<Character,Integer> map = new HashMap<>();
+        for(int i=0;i<str.length();i++) {
+            char ch = str.charAt(i);
+            int val = map.getOrDefault(ch,0);
+            map.put(ch,val+1);
+        }
+        for(int i=0;i<str.length();i++) {
+            char ch = str.charAt(i);
+            if(map.get(ch)==1) {
+                System.out.println(ch);
+                break;
+            }
+        }
+    }
+}
+
+```
