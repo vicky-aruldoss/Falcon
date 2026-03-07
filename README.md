@@ -176,3 +176,49 @@ class Main {
 }
 
 ```
+
+Problem: Reverse the words of a sentence without reversing characters.
+
+Input
+"I love Java"
+Output
+"Java love I"
+
+Concepts
+Strings,
+Arrays,
+StringBuilder
+
+```
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        String str = "I love Java";
+        String[] s = str.split(" ");
+
+        int start = 0, end = s.length - 1;
+
+        while(start < end) {
+            String temp = s[start];
+            s[start] = s[end];
+            s[end] = temp;
+            start++;
+            end--;
+        }
+
+        StringBuilder res = new StringBuilder();
+
+        for(String word : s) {
+            res.append(word).append(" ");
+        }
+
+        System.out.println(res.toString().trim()); // Why to convert res to String?.. Becoz trim() is the method which can apply only on strings
+    }
+}
+
+```
+
+
