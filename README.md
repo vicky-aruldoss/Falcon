@@ -253,3 +253,44 @@ class Main {
 }
 
 ```
+**SHECODES question**
+
+Given a string containing hashtags, find the most frequently used hashtag ignoring case.
+
+Input
+"#AI #AI #ai #Ai #ML #ML"
+
+Output
+#ai
+
+```
+import java.util.*;
+class Main {
+    public static void main(String [] args) {
+        String str = "#AI #AI #ai #Ai";
+        String s[] = str.split(" ");
+        boolean pres = false;
+        HashMap<String,Integer> map = new HashMap<>();
+        
+        for(int i=0;i<s.length;i++) {
+            String el = s[i];
+            if(el.charAt(0)=='#') {
+                pres = true;
+                el = el.toLowerCase();
+                int val = map.getOrDefault(el,0);
+                map.put(el,val+1);
+            }
+        }
+        int max = 0;
+        String maxstr = " ";
+        for(String st:map.keySet()) {
+            if(map.get(st)>max) {
+                max = map.get(st);
+                maxstr = st;
+            }
+        }
+        if(pres==false) System.out.println("Not valid");
+        else System.out.println(maxstr);
+    }
+}
+```
